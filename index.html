@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<!-- Ini adalah deklarasi bahwa ini dokumen HTML5 -->
 <html lang="id">
 <head>
-    <meta charset="UTF-8"> <!-- Agar mendukung karakter bahasa Indonesia -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platform Komunitas Lokal</title>
-    <link rel="stylesheet" href="style.css"> <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
     <header>
@@ -13,24 +14,38 @@
     </header>
 
     <main>
-        <section>
+        <!-- Bagian Daftar Proyek -->
+        <section id="project-list">
             <h2>Proyek Terbaru</h2>
             <div id="projects-container">
-                <!-- Proyek akan ditampilkan di sini -->
+                <!-- Proyek akan dimuat di sini melalui JavaScript -->
             </div>
         </section>
 
-        <section>
+        <!-- Peta Interaktif -->
+        <section id="project-map">
+            <h2>Peta Proyek</h2>
+            <div id="map"></div>
+        </section>
+
+        <!-- Form Tambah Proyek -->
+        <section id="add-project">
             <h2>Ajukan Proyek Baru</h2>
             <form id="project-form">
                 <label for="project-name">Nama Proyek:</label>
-                <input type="text" id="project-name" placeholder="Contoh: Pembersihan Sungai" required>
+                <input type="text" id="project-name" required placeholder="Contoh: Pembersihan Sungai">
                 
                 <label for="project-location">Lokasi:</label>
-                <input type="text" id="project-location" placeholder="Contoh: Jakarta Selatan" required>
+                <input type="text" id="project-location" required placeholder="Contoh: Jakarta Selatan">
                 
-                <label for="project-description">Deskripsi:</label>
-                <textarea id="project-description" rows="3" placeholder="Jelaskan proyek Anda..." required></textarea>
+                <label for="project-lat">Latitude:</label>
+                <input type="text" id="project-lat" placeholder="Contoh: -6.2088">
+                
+                <label for="project-lng">Longitude:</label>
+                <input type="text" id="project-lng" placeholder="Contoh: 106.8456">
+                
+                <label for="project-description">Deskripsi Singkat:</label>
+                <textarea id="project-description" rows="3" required placeholder="Jelaskan proyek Anda..."></textarea>
                 
                 <button type="submit">Kirim Proyek</button>
             </form>
@@ -41,6 +56,9 @@
         <p>© 2025 Platform Komunitas Lokal</p>
     </footer>
 
-    <script src="script.js"></script> <!-- Menghubungkan file JavaScript -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- File JavaScript kita -->
+    <script src="script.js"></script>
 </body>
 </html>
