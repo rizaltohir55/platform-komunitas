@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Supabase JS -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script>
+        // GANTI DENGAN URL DAN KEY ANDA DARI SUPABASE
+        const SUPABASE_URL = 'https://gwwdkjqepniaxmhyektb.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3d2RranFlcG5pYXhtaHlla3RiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwMzE4MDIsImV4cCI6MjA2ODYwNzgwMn0.ay0eeXpDvrkY5r0458IdTMMri5L5YE4nONLszuyG-i0';
+        
+        // Inisialisasi Supabase
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    </script>
 </head>
 <body>
     <header>
@@ -18,7 +28,7 @@
         <section id="project-list">
             <h2>Proyek Terbaru</h2>
             <div id="projects-container">
-                <!-- Proyek akan dimuat di sini melalui JavaScript -->
+                <p>Memuat proyek...</p>
             </div>
         </section>
 
@@ -47,7 +57,7 @@
                 <label for="project-description">Deskripsi Singkat:</label>
                 <textarea id="project-description" rows="3" required placeholder="Jelaskan proyek Anda..."></textarea>
                 
-                <button type="submit">Kirim Proyek</button>
+                <button type="submit" id="submit-button">Kirim Proyek</button>
             </form>
         </section>
     </main>
