@@ -58,35 +58,6 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Firebase SDK -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        
-        // Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyDGYWe7av5GzjxbqPqsDieotS_Yp1Hj9-M",
-          authDomain: "bumikolektif.firebaseapp.com",
-          projectId: "bumikolektif",
-          storageBucket: "bumikolektif.appspot.com",
-          messagingSenderId: "277458479235",
-          appId: "1:277458479235:web:cdbb0476e9fd31435fd3b6",
-          measurementId: "G-B6WC50BHN4"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        
-        // Ekspor variabel agar bisa diakses di file script.js
-        window.firebase = {
-            db,
-            collection,
-            addDoc,
-            getDocs
-        };
-    </script>
     <!-- File JavaScript kita -->
     <script src="script.js"></script>
 </body>
