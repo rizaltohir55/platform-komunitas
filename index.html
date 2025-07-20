@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Ini adalah deklarasi bahwa ini dokumen HTML5 -->
+<html lang="id">
+<head>
+    <meta charset="UTF-8"> <!-- Agar mendukung karakter bahasa Indonesia -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Komunitas Lokal</title>
+    <link rel="stylesheet" href="style.css"> <!-- Menghubungkan file CSS -->
+</head>
+<body>
+    <header>
+        <h1>🌿 Platform Kolaborasi Komunitas</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Proyek Terbaru</h2>
+            <div id="projects-container">
+                <!-- Proyek akan ditampilkan di sini -->
+            </div>
+        </section>
+
+        <section>
+            <h2>Ajukan Proyek Baru</h2>
+            <form id="project-form">
+                <label for="project-name">Nama Proyek:</label>
+                <input type="text" id="project-name" placeholder="Contoh: Pembersihan Sungai" required>
+                
+                <label for="project-location">Lokasi:</label>
+                <input type="text" id="project-location" placeholder="Contoh: Jakarta Selatan" required>
+                
+                <label for="project-description">Deskripsi:</label>
+                <textarea id="project-description" rows="3" placeholder="Jelaskan proyek Anda..." required></textarea>
+                
+                <button type="submit">Kirim Proyek</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Platform Komunitas Lokal</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Menghubungkan file JavaScript -->
+</body>
+</html>
