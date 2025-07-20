@@ -7,16 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Supabase JS -->
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <script>
-        // GANTI DENGAN URL DAN KEY ANDA DARI SUPABASE
-        const SUPABASE_URL = https://gwwdkjqepniaxmhyektb.supabase.co;
-        const SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3d2RranFlcG5pYXhtaHlla3RiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwMzE4MDIsImV4cCI6MjA2ODYwNzgwMn0.ay0eeXpDvrkY5r0458IdTMMri5L5YE4nONLszuyG-i0;
-        
-        // Inisialisasi Supabase
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-    </script>
 </head>
 <body>
     <header>
@@ -28,7 +18,7 @@
         <section id="project-list">
             <h2>Proyek Terbaru</h2>
             <div id="projects-container">
-                <p>Memuat proyek...</p>
+                <!-- Proyek akan dimuat di sini melalui JavaScript -->
             </div>
         </section>
 
@@ -57,7 +47,7 @@
                 <label for="project-description">Deskripsi Singkat:</label>
                 <textarea id="project-description" rows="3" required placeholder="Jelaskan proyek Anda..."></textarea>
                 
-                <button type="submit" id="submit-button">Kirim Proyek</button>
+                <button type="submit">Kirim Proyek</button>
             </form>
         </section>
     </main>
@@ -68,6 +58,35 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        
+        // Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDGYWe7av5GzjxbqPqsDieotS_Yp1Hj9-M",
+          authDomain: "bumikolektif.firebaseapp.com",
+          projectId: "bumikolektif",
+          storageBucket: "bumikolektif.appspot.com",
+          messagingSenderId: "277458479235",
+          appId: "1:277458479235:web:cdbb0476e9fd31435fd3b6",
+          measurementId: "G-B6WC50BHN4"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        // Ekspor variabel agar bisa diakses di file script.js
+        window.firebase = {
+            db,
+            collection,
+            addDoc,
+            getDocs
+        };
+    </script>
     <!-- File JavaScript kita -->
     <script src="script.js"></script>
 </body>

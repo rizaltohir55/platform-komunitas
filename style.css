@@ -64,11 +64,6 @@ button:hover {
     background-color: #2980b9;
 }
 
-button:disabled {
-    background-color: #95a5a6;
-    cursor: not-allowed;
-}
-
 footer {
     text-align: center;
     margin-top: 30px;
@@ -80,7 +75,6 @@ footer {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
-    background-color: #f9f9f9;
 }
 
 .project-card h3 {
@@ -88,52 +82,9 @@ footer {
     margin-bottom: 10px;
 }
 
-.project-card p {
-    margin-bottom: 8px;
-}
-
-.project-card small {
-    color: #7f8c8d;
-    font-size: 0.9em;
-}
-
 #map {
     height: 400px;
     width: 100%;
     border-radius: 8px;
     margin-top: 15px;
-    z-index: 0;
-}
-
-/* Pesan status */
-.status-message {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.status-loading {
-    background-color: #d6eaf8;
-    color: #2874a6;
-}
-
-.status-error {
-    background-color: #fadbd8;
-    color: #c0392b;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-    
-    section {
-        padding: 15px;
-    }
-    
-    #map {
-        height: 300px;
-    }
 }
